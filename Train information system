@@ -1,0 +1,55 @@
+import random
+
+class train:
+    def __init__(self,train_no) :
+        self.train_no = train_no
+        
+    def book(self,fro,to):
+        print(f"Ticket is booked in train no: {self.train_no} from {fro } to {to}")
+ 
+    def status(self,):
+        print(f"Ticket no is {self.train_no} running")
+
+    def getfare(self,fro,to):
+        print(f"Ticket fare in train no is: {self.train_no} from {fro} to {to} is {random.randint(150,500)}")
+
+
+t = train(126969)  
+t.book("ramput", "delhi")
+t.status()
+t.getfare("ramput", "delhi")
+
+# more expl verion
+import random
+class Train:
+    def __init__(self, train_no):
+        self.train_no = train_no
+
+    def book(self, fro, to):
+        self.fro = fro
+        self.to = to
+        print(f"Ticket is booked in train no: {self.train_no} from {self.fro} to {self.to}")
+
+    def status(self):
+        print(f"Ticket in train no {self.train_no} from {self.fro} to {self.to} is running")
+
+    def get_fare(self, fro, to):
+        fare = random.randint(150, 500)
+        print(f"Ticket fare in train no {self.train_no} from {fro} to {to} is: {fare}")
+
+# Taking input from the user
+train_no = int(input("Enter the train number: "))
+fro = input("Enter the departure station: ")
+to = input("Enter the destination station: ")
+
+# Creating an instance of Train with user input
+t = Train(train_no)
+
+# Booking a ticket
+t.book(fro, to)
+
+# Checking the status
+t.status()
+
+# Getting fare information
+t.get_fare(fro, to)
